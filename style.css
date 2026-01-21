@@ -83,6 +83,10 @@ nav a:hover {
     color: var(--accent-color);
 }
 
+.mobile-menu-icon {
+    display: none; /* Hidden on desktop */
+}
+
 /* Hero Section */
 #hero {
     height: 100vh;
@@ -543,7 +547,7 @@ footer a:hover {
 
     nav {
         position: fixed;
-        top: -100%;
+        top: -100%; /* Start off-screen */
         left: 0;
         width: 100%;
         height: 100vh;
@@ -552,22 +556,37 @@ footer a:hover {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: top 0.4s ease;
+        transition: top 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s linear 0.3s; /* Faster (0.3s) */
         z-index: 1000;
+        visibility: hidden; /* Hide completely when closed */
+        padding-top: 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
     nav.active {
         top: 0;
+        visibility: visible;
+        transition: top 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s linear 0s; /* Show immediately */
     }
 
     nav ul {
         flex-direction: column;
         align-items: center;
         gap: 30px;
+        margin-bottom: 40px; /* Space between links and icon */
     }
 
     nav a {
-        font-size: 1.5rem;
+        font-size: 1.4rem; /* Leggermente più piccolo */
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+    
+    .mobile-menu-icon {
+        width: 60px;
+        height: auto;
+        opacity: 0.8;
+        display: block; /* Visible on mobile */
     }
 
     #hero {

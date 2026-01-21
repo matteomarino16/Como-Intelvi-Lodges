@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const nav = document.querySelector('nav');
     const navLinks = document.querySelectorAll('nav a');
     const menuIcon = document.querySelector('.menu-toggle i');
+    
+    let menuOpenedScrollY = 0;
 
     if (menuToggle && nav) {
         menuToggle.addEventListener('click', () => {
@@ -14,11 +16,24 @@ document.addEventListener('DOMContentLoaded', function() {
             if (nav.classList.contains('active')) {
                 menuIcon.classList.remove('ph-list');
                 menuIcon.classList.add('ph-x');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                menuOpenedScrollY = window.scrollY; // Capture scroll position when opened
+                // document.body.style.overflow = 'hidden'; // Allow scrolling to trigger close
             } else {
                 menuIcon.classList.remove('ph-x');
                 menuIcon.classList.add('ph-list');
-                document.body.style.overflow = 'auto';
+                // document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close menu on scroll
+        window.addEventListener('scroll', () => {
+            if (nav.classList.contains('active')) {
+                // Add a threshold to avoid accidental closing on micro-scrolls
+                if (Math.abs(window.scrollY - menuOpenedScrollY) > 20) {
+                    nav.classList.remove('active');
+                    menuIcon.classList.remove('ph-x');
+                    menuIcon.classList.add('ph-list');
+                }
             }
         });
 
@@ -28,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 nav.classList.remove('active');
                 menuIcon.classList.remove('ph-x');
                 menuIcon.classList.add('ph-list');
-                document.body.style.overflow = 'auto';
+                // document.body.style.overflow = 'auto';
             });
         });
     }
