@@ -2,8 +2,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // --- Mobile Menu Toggle ---
     const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav');
-    const navLinks = document.querySelectorAll('nav a');
+    // Select both possible navs to handle transition if needed, 
+    // but primarily we want to toggle the mobile-nav on mobile.
+    // Let's check if we are on mobile or check if mobile-nav exists.
+    const mobileNav = document.getElementById('mobile-nav');
+    
+    // We can just use mobileNav as 'nav' variable if it exists, since on desktop menuToggle is hidden.
+    const nav = mobileNav || document.querySelector('nav'); 
+    
+    const navLinks = nav ? nav.querySelectorAll('a') : [];
     const menuIcon = document.querySelector('.menu-toggle i');
     
     let menuOpenedScrollY = 0;
