@@ -339,3 +339,64 @@
     border-color: #eee;
     background-color: #f9f9f9;
 }
+
+/* Mobile Responsive for Modal */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto; /* More margin top for safe area */
+        padding: 20px;
+        max-height: 90vh; /* Prevent it from being too tall */
+        overflow-y: auto; /* Internal scroll if needed */
+    }
+
+    .modal-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .close-modal {
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+    }
+
+    .modal-gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .modal-gallery img {
+        height: 100px; /* Smaller images */
+    }
+
+    .modal-body {
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .modal-description, .modal-location {
+        min-width: 100%; /* Full width */
+    }
+
+    .modal-features {
+        padding: 15px;
+        gap: 15px;
+        grid-template-columns: 1fr; /* Single column for features on small screens */
+    }
+
+    .modal-feature-item {
+        gap: 10px;
+    }
+
+    .modal-feature-item i {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 1rem;
+    }
+
+    .modal-map {
+        height: 200px;
+    }
+}
