@@ -674,7 +674,9 @@ footer a:hover {
     #hero {
         background-image: url('heromobile.jpg');
         background-attachment: scroll; /* Meglio su mobile */
-        position: relative; /* Disable sticky on mobile to avoid gaps */
+        position: sticky; /* Re-enable sticky for parallax effect */
+        top: 0;
+        z-index: 0;
     }
 
     .hero-content h1 {
