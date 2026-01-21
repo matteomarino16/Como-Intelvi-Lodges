@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Intelvi Lodges</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Como Intelvi Lodges Logo" class="logo">
+        </div>
+        <div class="menu-toggle">
+            <i class="ph ph-list"></i>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#strutture">Strutture</a></li>
+                <li><a href="#chi-siamo">Chi siamo</a></li>
+                <li><a href="#contatti">Contattaci</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Residenze di charme sul Lago di Como</h1>
+            <a href="#strutture" class="btn-minimal">Scopri le strutture</a>
+        </div>
+    </section>
+
+    <section id="strutture">
+        <h2>Le nostre strutture</h2>
+        <div class="strutture-grid">
+            <!-- Cà del Restel -->
+            <div class="struttura-card" id="card-cadelrestel">
+                <img src="cadelrestel/1.jpg" alt="Cà del Restel" class="card-image">
+                <h3>Cà del Restel</h3>
+                <div class="card-meta-row">
+                    <p class="location"><i class="ph ph-map-pin"></i> Castiglione d'Intelvi</p>
+                    <p class="price">2.500€ / mese</p>
+                </div>
+                <div class="card-features">
+                    <div class="feature" title="Posti letto"><i class="ph ph-bed"></i> 4</div>
+                    <div class="feature" title="Bagni"><i class="ph ph-shower"></i> 2</div>
+                    <div class="feature" title="Posti auto"><i class="ph ph-car"></i> 1</div>
+                    <div class="feature" title="Superficie"><i class="ph ph-ruler"></i> 1200 Mq</div>
+                </div>
+            </div>
+            <!-- Terrazza sul lago Lezzeno -->
+            <div class="struttura-card" id="card-terrazzalagolezzeno">
+                <img src="terrazzalagolezzeno/1.jpg" alt="Terrazza sul lago Lezzeno" class="card-image">
+                <h3>La Terrazza sul lago Lezzeno</h3>
+                <div class="card-meta-row">
+                    <p class="location"><i class="ph ph-map-pin"></i> Lezzeno</p>
+                    <p class="price">2.500€ / mese</p>
+                </div>
+                <div class="card-features">
+                    <div class="feature"><i class="ph ph-bed"></i> 3</div>
+                    <div class="feature"><i class="ph ph-shower"></i> 1</div>
+                    <div class="feature"><i class="ph ph-car"></i> 1</div>
+                    <div class="feature"><i class="ph ph-ruler"></i> 228 Mq</div>
+                </div>
+            </div>
+            <!-- La terrazza sui monti -->
+            <div class="struttura-card" id="card-terrazzasuimonti">
+                <img src="terrazzasuimonti/1.jpg" alt="La terrazza sui monti" class="card-image">
+                <h3>La Terrazza sui Monti</h3>
+                <div class="card-meta-row">
+                    <p class="location"><i class="ph ph-map-pin"></i> Valle Intelvi</p>
+                    <p class="price">2.500€ / mese</p>
+                </div>
+                <div class="card-features">
+                    <div class="feature"><i class="ph ph-bed"></i> 2</div>
+                    <div class="feature"><i class="ph ph-shower"></i> 1</div>
+                    <div class="feature"><i class="ph ph-car"></i> 1</div>
+                    <div class="feature"><i class="ph ph-ruler"></i> 214 Mq</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="chi-siamo">
+        <div class="container">
+            <h2>Chi siamo</h2>
+            <div class="chi-siamo-wrapper">
+                <div class="chi-siamo-image">
+                    <img src="favicon.png" alt="Como Intelvi Lodges Icon">
+                </div>
+                <div class="chi-siamo-text">
+                    <p>Como Intelvi Lodges offre tre residenze d’autore sul Lago di Como, pensate per chi cerca un soggiorno di comfort, tranquillità e autenticità. Ogni appartamento combina design contemporaneo e atmosfera tipica della valle, con spazi luminosi e dotazioni curate nei dettagli. Situati in posizioni strategiche tra lago, monti e borghi storici.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatti">
+        <div class="container">
+            <h2>Contattaci</h2>
+            <p class="section-subtitle"></p>
+            <div class="contatti-wrapper">
+                <!-- Box Sinistra: Contatti e Mappa -->
+                <div class="contact-card info-card">
+                    <h3>Contatti</h3>
+                    <div class="contact-details-boxes">
+                        <a href="mailto:info@comointelvilodges.it" class="contact-box">
+                            <i class="ph ph-envelope-simple"></i>
+                            <span>info@comointelvilodges.it</span>
+                        </a>
+                        <a href="tel:+390000000000" class="contact-box">
+                            <i class="ph ph-phone"></i>
+                            <span>+39 000 000 0000</span>
+                        </a>
+                        <div class="contact-box address">
+                            <i class="ph ph-map-pin"></i>
+                            <span>Como / Valle Intelvi</span>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d179093.0784407519!2d9.066447963364964!3d45.96873549642358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4784310557438491%3A0x3344682052601723!2sLago%20di%20Como!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <!-- Box Destra: Form -->
+                <div class="contact-card form-card">
+                    <h3>Richiesta informazioni</h3>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nome">Nome</label>
+                                <input type="text" id="nome" name="nome" placeholder="Nome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cognome">Cognome</label>
+                                <input type="text" id="cognome" name="cognome" placeholder="Cognome" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="nome@esempio.it" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Telefono</label>
+                                <input type="tel" id="telefono" name="telefono" placeholder="+39..." required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="appartamento">Seleziona Appartamento</label>
+                            <select id="appartamento" name="appartamento" required>
+                                <option value="" disabled selected>-- Scegli la struttura --</option>
+                                <option value="cadelrestel">Cà del Restel</option>
+                                <option value="terrazzalagolezzeno">Terrazza sul lago Lezzeno</option>
+                                <option value="terrazzasuimonti">La terrazza sui monti</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="messaggio">Messaggio</label>
+                            <textarea id="messaggio" name="messaggio" rows="4" placeholder="Scrivi qui la tua richiesta..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-full">Invia richiesta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Copyright comointelvilodges.it - tutti i diritti sono riservati</p>
+            <p class="credits">Web by <a href="https://instagram.com/_matteo_marino" target="_blank">Matteo Marino</a></p>
+        </div>
+    </footer>
+
+    <!-- Modal Cà del Restel -->
+    <div id="modal-cadelrestel" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>Cà del Restel</h2>
+            </div>
+            
+            <div class="modal-gallery">
+                <!-- Main large photo -->
+                <img src="cadelrestel/1.jpg" alt="Cà del Restel Main" class="main-photo">
+                <!-- Grid of other photos -->
+                <img src="cadelrestel/2.jpg" alt="Foto 2">
+                <img src="cadelrestel/3.jpg" alt="Foto 3">
+                <img src="cadelrestel/4.jpg" alt="Foto 4">
+                <img src="cadelrestel/5.jpg" alt="Foto 5">
+                <img src="cadelrestel/6.jpg" alt="Foto 6">
+                <img src="cadelrestel/7.jpg" alt="Foto 7">
+                <img src="cadelrestel/8.jpg" alt="Foto 8">
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-description">
+                    <h3>Descrizione</h3>
+                    <p>A Castiglione dʼIntelvi, a 13 km da Monte Generoso e 15 km da Villa Carlotta, Cà del Restel propone un alloggio con WiFi gratuito, aria condizionata e terrazza. L’appartamento dispone di parcheggio privato gratuito e si trova in una zona dove potrete praticare l’escursionismo e il ciclismo.</p>
+                    <p>Questo appartamento presenta 3 camere da letto, 2 bagni, lenzuola, asciugamani, una TV a schermo piatto, una zona pranzo, una cucina con utensili e un balcone con vista sulla montagna. Parco Swissminiatur è a 21 km da questo appartamento, mentre Museo Villa Olmo si trova a 24 km dalla struttura.</p>
+                    
+                    <div class="modal-features">
+                        <div class="modal-feature-item">
+                            <i class="ph ph-bed"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">4</span>
+                                <span class="label">Bedrooms</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-shower"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">2</span>
+                                <span class="label">Bathrooms</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-car"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">1</span>
+                                <span class="label">Garage</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-ruler"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">1200 Mq</span>
+                                <span class="label">Superficie</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-calendar"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">2016</span>
+                                <span class="label">Year Built</span>
+                            </div>
+                        </div>
+                        <!-- New Features -->
+                        <div class="modal-feature-item">
+                            <i class="ph ph-wifi-high"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">Incluso</span>
+                                <span class="label">WiFi</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-snowflake"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">Sì</span>
+                                <span class="label">Aria Cond.</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-cigarette"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">Sì</span>
+                                <span class="label">Area Fumatori</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-location">
+                    <h3>Posizione</h3>
+                    <div class="address-box">
+                        <i class="ph ph-map-pin"></i>
+                        <p>Via Roma, 9<br>22023 Castiglione dʼIntelvi (CO)</p>
+                    </div>
+                    <div class="modal-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2779.673895697672!2d9.0833!3d45.9667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478423f8b0b0b0b1%3A0x0!2sVia%20Roma%2C%209%2C%2022023%20Castiglione%20d'Intelvi%20CO!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="modal-contact-boxes">
+                        <a href="mailto:info@comointelvilodges.it" class="contact-box">
+                            <i class="ph ph-envelope-simple"></i>
+                            <span>info@comointelvilodges.it</span>
+                        </a>
+                        <a href="tel:+390000000000" class="contact-box">
+                            <i class="ph ph-phone"></i>
+                            <span>+39 000 000 0000</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Terrazza sul lago Lezzeno -->
+    <div id="modal-terrazzalagolezzeno" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>La Terrazza sul lago Lezzeno</h2>
+            </div>
+            
+            <div class="modal-gallery">
+                <!-- Main large photo -->
+                <img src="terrazzalagolezzeno/1.jpg" alt="Terrazza Lezzeno Main" class="main-photo">
+                <!-- Grid of other photos -->
+                <img src="terrazzalagolezzeno/1 copia.jpg" alt="Foto 2">
+                <img src="terrazzalagolezzeno/1 copia 2.jpg" alt="Foto 3">
+                <img src="terrazzalagolezzeno/1 copia 3.jpg" alt="Foto 4">
+
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-description">
+                    <h3>Descrizione</h3>
+                    <p>Con vista sulla città, La Terrazza sul lago Lezzeno mette a disposizione un alloggio dotato di terrazza e balcone, a circa 6,5 km da Imbarco Battelli Bellagio. L’alloggio dista 5,7 km da I Giardini di Villa Melzi e offre il WiFi gratuito e il parcheggio privato disponibile sul posto.</p>
+                    <p>Questa casa vacanze con aria condizionata comprende 3 camere da letto, un soggiorno, una cucina con utensili, frigorifero e macchina da caffè, e 1 bagno con bidet e doccia. Presso questa casa vacanze troverete asciugamani e lenzuola tra i servizi offerti.</p>
+                    <p>Nelle vicinanze potrete praticare il ciclismo. Stazione di Como Lago è a 23 km da questa casa vacanze, mentre Basilica di San Fedele si trova a 24 km dalla struttura. Aeroporto di Bergamo-Orio al Serio si trova a 66 km di distanza.</p>
+                    
+                    <div class="modal-features">
+                        <div class="modal-feature-item">
+                            <i class="ph ph-bed"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">3</span>
+                                <span class="label">Bedrooms</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-shower"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">1</span>
+                                <span class="label">Bathrooms</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-car"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">1</span>
+                                <span class="label">Garage</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-ruler"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">228 Mq</span>
+                                <span class="label">Superficie</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-calendar"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">2016</span>
+                                <span class="label">Year Built</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-wifi-high"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">Incluso</span>
+                                <span class="label">WiFi</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-snowflake"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">Sì</span>
+                                <span class="label">Aria Cond.</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-cigarette"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">Sì</span>
+                                <span class="label">Area Fumatori</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-location">
+                    <h3>Posizione</h3>
+                    <div class="address-box">
+                        <i class="ph ph-map-pin"></i>
+                        <p>Lezzeno (CO)</p>
+                    </div>
+                    <div class="modal-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22228.48622631557!2d9.17548855!3d45.94697965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478418c303867605%3A0x4081c7921312380!2s22025%20Lezzeno%20CO!5e0!3m2!1sit!2sit!4v1705934000000!5m2!1sit!2sit" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="modal-contact-boxes">
+                        <a href="mailto:info@comointelvilodges.it" class="contact-box">
+                            <i class="ph ph-envelope-simple"></i>
+                            <span>info@comointelvilodges.it</span>
+                        </a>
+                        <a href="tel:+390000000000" class="contact-box">
+                            <i class="ph ph-phone"></i>
+                            <span>+39 000 000 0000</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal La Terrazza sui Monti -->
+    <div id="modal-terrazzasuimonti" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2>La Terrazza sui Monti</h2>
+            </div>
+            
+            <div class="modal-gallery">
+                <!-- Main large photo -->
+                <img src="terrazzasuimonti/1.jpg" alt="La Terrazza sui Monti Main" class="main-photo">
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-description">
+                    <h3>Descrizione</h3>
+                    <p>Con vista sul giardino, La Terrazza sui Monti propone un alloggio con balcone e macchina da caffè, a circa 15 km da Villa Carlotta. Con aria condizionata, l’alloggio è a 13 km da Monte Generoso e offre WiFi gratis e parcheggio privato disponibile sul posto.</p>
+                    <p>Questo appartamento presenta 3 camere da letto, 2 bagni, lenzuola, asciugamani, una TV a schermo piatto, una zona pranzo, una cucina con utensili e una terrazza con vista sulla montagna. Presso questo appartamento potrete usufruire di una vasca idromassaggio.</p>
+                    <p>Parco Swissminiatur è a 21 km da La Terrazza sui Monti, mentre Museo Villa Olmo si trova a 24 km dalla struttura.</p>
+                    
+                    <div class="modal-features">
+                        <div class="modal-feature-item">
+                            <i class="ph ph-bed"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">3</span>
+                                <span class="label">Bedrooms</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-shower"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">2</span>
+                                <span class="label">Bathrooms</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-car"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">1</span>
+                                <span class="label">Garage</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-ruler"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">214 Mq</span>
+                                <span class="label">Superficie</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-calendar"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">2016</span>
+                                <span class="label">Year Built</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-wifi-high"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">Incluso</span>
+                                <span class="label">WiFi</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-snowflake"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">Sì</span>
+                                <span class="label">Aria Cond.</span>
+                            </div>
+                        </div>
+                        <div class="modal-feature-item">
+                            <i class="ph ph-bathtub"></i>
+                            <div class="modal-feature-text">
+                                <span class="value">Sì</span>
+                                <span class="label">Idromassaggio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-location">
+                    <h3>Posizione</h3>
+                    <div class="address-box">
+                        <i class="ph ph-map-pin"></i>
+                        <p>Valle Intelvi (CO)</p>
+                    </div>
+                    <div class="modal-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d44465.78763567431!2d9.055866!3d45.961967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478423f779776071%3A0x6c63748231666324!2sCentro%20Valle%20Intelvi%20CO!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="modal-contact-boxes">
+                        <a href="mailto:info@comointelvilodges.it" class="contact-box">
+                            <i class="ph ph-envelope-simple"></i>
+                            <span>info@comointelvilodges.it</span>
+                        </a>
+                        <a href="tel:+390000000000" class="contact-box">
+                            <i class="ph ph-phone"></i>
+                            <span>+39 000 000 0000</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Lightbox Container -->
+    <div id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-nav lightbox-prev"><i class="ph ph-caret-left"></i></div>
+        <div class="lightbox-nav lightbox-next"><i class="ph ph-caret-right"></i></div>
+        <img id="lightbox-img" src="" alt="Full screen image">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
+</body>
+</html>
