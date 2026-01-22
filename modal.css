@@ -88,7 +88,6 @@
 /* Rimosso stile speciale per main-photo per avere una griglia uniforme */
 .modal-gallery img.main-photo {
     grid-column: auto;
-    height: 150px;
 }
 
 /* Lightbox Styles */

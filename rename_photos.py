@@ -50,3 +50,6 @@ rename_images("cadelrestel")
 
 print("Processing terrazzasuimonti...")
 rename_images("terrazzasuimonti")
+
+print("Processing terrazzalagolezzeno...")
+rename_images("terrazzalagolezzeno")
