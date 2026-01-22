@@ -354,7 +354,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Scroll Animations ---
     const observerOptions = {
-        threshold: 0.2 // Trigger when 20% visible
+        threshold: 0.1, // Trigger when 10% visible (more sensitive for mobile)
+        rootMargin: '0px 0px 50px 0px' // Trigger slightly before element enters viewport
     };
 
     const observer = new IntersectionObserver((entries) => {

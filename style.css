@@ -15,8 +15,20 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 html {
     scroll-behavior: smooth;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 /* Custom Scrollbar */
@@ -1056,6 +1068,11 @@ footer a:hover {
         background-image: url('heromobile.jpg');
         background-attachment: scroll; /* Meglio su mobile */
         animation: none; /* Disable zoom on mobile for performance */
+    }
+
+    #scopri-lago {
+        background-attachment: scroll; /* Fix jittery scroll on mobile */
+        background-position: center;
     }
 
     .hero-content h1 {
