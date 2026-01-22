@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="style.css?v=10">
     <link rel="stylesheet" href="modal.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
@@ -29,6 +29,11 @@
 <body>
 
     <header>
+        <div class="lang-switch-container">
+            <span class="lang-option active" data-lang="it">IT</span>
+            <span class="separator">|</span>
+            <span class="lang-option" data-lang="en">EN</span>
+        </div>
         <div class="logo-container">
             <img src="logo.png" alt="Como Intelvi Lodges Logo" class="logo">
         </div>
@@ -37,9 +42,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#strutture">Strutture</a></li>
-                <li><a href="#chi-siamo">Chi siamo</a></li>
-                <li><a href="#contatti">Contattaci</a></li>
+                <li><a href="#strutture" data-i18n="nav_structures">Strutture</a></li>
+                <li><a href="#chi-siamo" data-i18n="nav_about">Chi siamo</a></li>
+                <li><a href="#contatti" data-i18n="nav_contact">Contattaci</a></li>
             </ul>
             <img src="favicon.png" alt="Como Intelvi Lodges Icon" class="mobile-menu-icon">
         </nav>
@@ -47,13 +52,13 @@
 
     <section id="hero">
         <div class="hero-content">
-            <h1>Residenze di charme sul Lago di Como</h1>
-            <a href="#strutture" class="btn-minimal">Scopri le strutture</a>
+            <h1 data-i18n="hero_title">Residenze di charme sul Lago di Como</h1>
+            <a href="#strutture" class="btn-minimal" data-i18n="hero_cta">Scopri le strutture</a>
         </div>
     </section>
 
     <section id="strutture">
-        <h2>Le nostre strutture</h2>
+        <h2 class="reveal" data-i18n="section_structures">Le nostre strutture</h2>
         <div class="strutture-grid">
             <!-- Cà del Restel -->
             <div class="struttura-card" id="card-cadelrestel">
@@ -61,13 +66,13 @@
                 <h3>Cà del Restel</h3>
                 <div class="card-meta-row">
                     <p class="location"><i class="ph ph-map-pin"></i> Castiglione d'Intelvi</p>
-                    <p class="price">150€ / notte</p>
+                    <p class="price" data-i18n="price_night">150€ / notte</p>
                 </div>
                 <div class="card-features">
-                    <div class="feature" title="Posti letto"><i class="ph ph-bed"></i> 6</div>
-                    <div class="feature" title="Bagni"><i class="ph ph-shower"></i> 2</div>
-                    <div class="feature" title="Posti auto"><i class="ph ph-car"></i> 2</div>
-                    <div class="feature" title="Superficie"><i class="ph ph-ruler"></i> 120 Mq</div>
+                    <div class="feature" title="Posti letto" data-i18n-title="feat_beds"><i class="ph ph-bed"></i> 6</div>
+                    <div class="feature" title="Bagni" data-i18n-title="feat_bathrooms"><i class="ph ph-shower"></i> 2</div>
+                    <div class="feature" title="Posti auto" data-i18n-title="feat_parking"><i class="ph ph-car"></i> 2</div>
+                    <div class="feature" title="Superficie" data-i18n-title="feat_surface"><i class="ph ph-ruler"></i> 120 Mq</div>
                 </div>
             </div>
             <!-- Terrazza sul lago Lezzeno -->
@@ -76,7 +81,7 @@
                 <h3>La Terrazza sul lago Lezzeno</h3>
                 <div class="card-meta-row">
                     <p class="location"><i class="ph ph-map-pin"></i> Lezzeno</p>
-                    <p class="price">150€ / notte</p>
+                    <p class="price" data-i18n="price_night">150€ / notte</p>
                 </div>
                 <div class="card-features">
                     <div class="feature"><i class="ph ph-bed"></i> 6</div>
@@ -91,7 +96,7 @@
                 <h3>La Terrazza sui Monti</h3>
                 <div class="card-meta-row">
                     <p class="location"><i class="ph ph-map-pin"></i> Valle Intelvi</p>
-                    <p class="price">150€ / notte</p>
+                    <p class="price" data-i18n="price_night">150€ / notte</p>
                 </div>
                 <div class="card-features">
                     <div class="feature"><i class="ph ph-bed"></i> 6</div>
@@ -106,8 +111,8 @@
     <section id="sezione1">
         <img src="favicon.png" class="margin-icon left" alt="Decoration">
         <div class="container">
-            <h2>Contattaci per offerte e promozioni</h2>
-            <div class="contact-icons">
+            <h2 class="reveal" data-i18n="section_offers">Contattaci per offerte e promozioni</h2>
+            <div class="contact-icons reveal">
                 <a href="https://wa.me/393394197192" target="_blank" class="contact-icon whatsapp">
                     <i class="ph ph-whatsapp-logo"></i>
                 </a>
@@ -124,13 +129,13 @@
 
     <section id="chi-siamo">
         <div class="container">
-            <h2>Chi siamo</h2>
+            <h2 class="reveal" data-i18n="section_about">Chi siamo</h2>
             <div class="chi-siamo-wrapper">
-                <div class="chi-siamo-image">
+                <div class="chi-siamo-image reveal-left">
                     <img src="favicon.png" alt="Como Intelvi Lodges Icon">
                 </div>
-                <div class="chi-siamo-text">
-                    <p>Como Intelvi Lodges offre tre residenze d’autore sul Lago di Como, pensate per chi cerca un soggiorno di comfort, tranquillità e autenticità. Ogni appartamento combina design contemporaneo e atmosfera tipica della valle, con spazi luminosi e dotazioni curate nei dettagli. Situati in posizioni strategiche tra lago, monti e borghi storici.</p>
+                <div class="chi-siamo-text reveal-right">
+                    <p data-i18n="about_text">Como Intelvi Lodges offre tre residenze d’autore sul Lago di Como, pensate per chi cerca un soggiorno di comfort, tranquillità e autenticità. Ogni appartamento combina design contemporaneo e atmosfera tipica della valle, con spazi luminosi e dotazioni curate nei dettagli. Situati in posizioni strategiche tra lago, monti e borghi storici.</p>
                 </div>
             </div>
         </div>
@@ -138,12 +143,12 @@
 
     <section id="contatti">
         <div class="container">
-            <h2>Contattaci</h2>
+            <h2 class="reveal" data-i18n="section_contact">Contattaci</h2>
             <p class="section-subtitle"></p>
             <div class="contatti-wrapper">
                 <!-- Box Sinistra: Contatti e Mappa -->
-                <div class="contact-card info-card">
-                    <h3>Contatti</h3>
+                <div class="contact-card info-card reveal-left">
+                    <h3 data-i18n="contact_title">Contatti</h3>
                     <div class="contact-details-boxes">
                         <a href="mailto:info@hotelauroralezzeno.com" class="contact-box">
                             <i class="ph ph-envelope-simple"></i>
@@ -164,17 +169,17 @@
                 </div>
 
                 <!-- Box Destra: Form -->
-                <div class="contact-card form-card">
-                    <h3>Richiesta informazioni</h3>
+                <div class="contact-card form-card reveal-right">
+                    <h3 data-i18n="form_title">Richiesta informazioni</h3>
                     <form>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="nome">Nome</label>
-                                <input type="text" id="nome" name="nome" placeholder="Nome" required>
+                                <label for="nome" data-i18n="form_name">Nome</label>
+                                <input type="text" id="nome" name="nome" placeholder="Nome" data-i18n-placeholder="form_name_placeholder" required>
                             </div>
                             <div class="form-group">
-                                <label for="cognome">Cognome</label>
-                                <input type="text" id="cognome" name="cognome" placeholder="Cognome" required>
+                                <label for="cognome" data-i18n="form_surname">Cognome</label>
+                                <input type="text" id="cognome" name="cognome" placeholder="Cognome" data-i18n-placeholder="form_surname_placeholder" required>
                             </div>
                         </div>
                         <div class="form-row">
@@ -183,24 +188,24 @@
                                 <input type="email" id="email" name="email" placeholder="nome@esempio.it" required>
                             </div>
                             <div class="form-group">
-                                <label for="telefono">Telefono</label>
+                                <label for="telefono" data-i18n="form_phone">Telefono</label>
                                 <input type="tel" id="telefono" name="telefono" placeholder="+39..." required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="appartamento">Seleziona Appartamento</label>
+                            <label for="appartamento" data-i18n="form_select_apartment">Seleziona Appartamento</label>
                             <select id="appartamento" name="appartamento" required>
-                                <option value="" disabled selected>-- Scegli la struttura --</option>
+                                <option value="" disabled selected data-i18n="form_select_default">-- Scegli la struttura --</option>
                                 <option value="cadelrestel">Cà del Restel</option>
                                 <option value="terrazzalagolezzeno">Terrazza sul lago Lezzeno</option>
                                 <option value="terrazzasuimonti">La terrazza sui monti</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="messaggio">Messaggio</label>
-                            <textarea id="messaggio" name="messaggio" rows="4" placeholder="Scrivi qui la tua richiesta..." required></textarea>
+                            <label for="messaggio" data-i18n="form_message">Messaggio</label>
+                            <textarea id="messaggio" name="messaggio" rows="4" placeholder="Scrivi qui la tua richiesta..." data-i18n-placeholder="form_message_placeholder" required></textarea>
                         </div>
-                        <button type="submit" class="btn-full">Invia richiesta</button>
+                        <button type="submit" class="btn-full" data-i18n="form_submit">Invia richiesta</button>
                     </form>
                 </div>
             </div>
@@ -209,24 +214,26 @@
 
     <section id="scopri-lago">
         <div class="container">
-            <h2>Vieni a scoprire il Lago di Como</h2>
-            <a href="https://www.lakecomo.is/it/luoghi/" target="_blank" class="btn-black">Scopri i luoghi</a>
+            <h2 class="reveal" data-i18n="section_discover">Vieni a scoprire il Lago di Como</h2>
+            <div class="reveal">
+                <a href="https://www.lakecomo.is/it/luoghi/" target="_blank" class="btn-black" data-i18n="discover_btn">Scopri i luoghi</a>
+            </div>
         </div>
     </section>
 
     <!-- Floating Action Buttons -->
-    <a href="tel:+393394197192" class="float-btn float-left phone" title="Chiamaci">
+    <a href="tel:+393394197192" class="float-btn float-left phone" title="Chiamaci" data-i18n-title="action_call">
         <i class="ph ph-phone"></i>
     </a>
-    <a href="mailto:info@hotelauroralezzeno.com" class="float-btn float-right email" title="Inviaci una email">
+    <a href="mailto:info@hotelauroralezzeno.com" class="float-btn float-right email" title="Inviaci una email" data-i18n-title="action_email">
         <i class="ph ph-envelope-simple"></i>
     </a>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Copyright Comointelvilodges.it - Tutti i diritti sono riservati.</p>
-            <p><a href="privacy.html" style="font-size: 0.8rem; text-decoration: none; color: inherit;">Privacy Policy</a></p>
-            <p class="credits">Web by <a href="https://instagram.com/_matteomarino" target="_blank">Matteo Marino</a></p>
+            <p data-i18n="footer_copyright">&copy; 2026 Copyright Comointelvilodges.it - Tutti i diritti sono riservati.</p>
+            <p><a href="privacy.html" style="font-size: 0.8rem; text-decoration: none; color: inherit;" data-i18n="footer_privacy">Privacy Policy</a></p>
+            <p class="credits" data-i18n="footer_credits">Web by <a href="https://instagram.com/_matteomarino" target="_blank">Matteo Marino</a></p>
         </div>
     </footer>
 
@@ -263,87 +270,87 @@
 
             <div class="modal-body">
                 <div class="modal-description">
-                    <h3>Descrizione</h3>
-                    <p>A Castiglione dʼIntelvi, a 13 km da Monte Generoso e 15 km da Villa Carlotta, Cà del Restel propone un alloggio con WiFi gratuito, aria condizionata e terrazza. L’appartamento dispone di 2 posti auto all'aperto (no garage) con colonnina per ricarica elettrica e si trova in una zona dove potrete praticare l’escursionismo e il ciclismo.</p>
-                    <p>Questo appartamento presenta 3 camere da letto per un totale di 6 posti letto, 2 bagni, lenzuola, asciugamani, 2 TV LCD, una zona pranzo, una cucina con utensili e un balcone con vista sulla montagna. Parco Swissminiatur è a 21 km da questo appartamento, mentre Museo Villa Olmo si trova a 24 km dalla struttura.</p>
+                    <h3 data-i18n="modal_desc_title">Descrizione</h3>
+                    <p data-i18n="cadelrestel_desc_1">A Castiglione dʼIntelvi, a 13 km da Monte Generoso e 15 km da Villa Carlotta, Cà del Restel propone un alloggio con WiFi gratuito, aria condizionata e terrazza. L’appartamento dispone di 2 posti auto all'aperto (no garage) con colonnina per ricarica elettrica e si trova in una zona dove potrete praticare l’escursionismo e il ciclismo.</p>
+                    <p data-i18n="cadelrestel_desc_2">Questo appartamento presenta 3 camere da letto per un totale di 6 posti letto, 2 bagni, lenzuola, asciugamani, 2 TV LCD, una zona pranzo, una cucina con utensili e un balcone con vista sulla montagna. Parco Swissminiatur è a 21 km da questo appartamento, mentre Museo Villa Olmo si trova a 24 km dalla struttura.</p>
                     
                     <div class="modal-features">
                         <div class="modal-feature-item">
                             <i class="ph ph-bed"></i>
                             <div class="modal-feature-text">
                                 <span class="value">3</span>
-                                <span class="label">Bedrooms</span>
+                                <span class="label" data-i18n="feat_bedrooms">Bedrooms</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-users"></i>
                             <div class="modal-feature-text">
                                 <span class="value">6</span>
-                                <span class="label">Posti Letto</span>
+                                <span class="label" data-i18n="feat_beds">Posti Letto</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-shower"></i>
                             <div class="modal-feature-text">
                                 <span class="value">2</span>
-                                <span class="label">Bathrooms</span>
+                                <span class="label" data-i18n="feat_bathrooms">Bathrooms</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-car"></i>
                             <div class="modal-feature-text">
                                 <span class="value">2</span>
-                                <span class="label">Posti Auto</span>
+                                <span class="label" data-i18n="feat_parking">Posti Auto</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-ruler"></i>
                             <div class="modal-feature-text">
                                 <span class="value">120 Mq</span>
-                                <span class="label">Superficie</span>
+                                <span class="label" data-i18n="feat_surface">Superficie</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-television"></i>
                             <div class="modal-feature-text">
                                 <span class="value">2</span>
-                                <span class="label">TV LCD</span>
+                                <span class="label" data-i18n="feat_tv">TV LCD</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-calendar"></i>
                             <div class="modal-feature-text">
                                 <span class="value">2016</span>
-                                <span class="label">Year Built</span>
+                                <span class="label" data-i18n="feat_year">Year Built</span>
                             </div>
                         </div>
                         <!-- New Features -->
                         <div class="modal-feature-item">
                             <i class="ph ph-wifi-high"></i>
                             <div class="modal-feature-text">
-                                <span class="value">Incluso</span>
+                                <span class="value" data-i18n="feat_included">Incluso</span>
                                 <span class="label">WiFi</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-snowflake"></i>
                             <div class="modal-feature-text">
-                                <span class="value">Sì</span>
-                                <span class="label">Aria Cond.</span>
+                                <span class="value" data-i18n="feat_yes">Sì</span>
+                                <span class="label" data-i18n="feat_ac">Aria Cond.</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-cigarette"></i>
                             <div class="modal-feature-text">
-                                <span class="value">Sì</span>
-                                <span class="label">Area Fumatori</span>
+                                <span class="value" data-i18n="feat_yes">Sì</span>
+                                <span class="label" data-i18n="feat_smoking">Area Fumatori</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="modal-location">
-                    <h3>Posizione</h3>
+                    <h3 data-i18n="modal_location_title">Posizione</h3>
                     <div class="address-box">
                         <i class="ph ph-map-pin"></i>
                         <p>Via Roma, 9<br>22023 Castiglione dʼIntelvi (CO)</p>
@@ -390,45 +397,45 @@
 
             <div class="modal-body">
                 <div class="modal-description">
-                    <h3>Descrizione</h3>
-                    <p>Con vista sulla città, La Terrazza sul lago Lezzeno mette a disposizione un alloggio dotato di splendida terrazza rooftop con vista lago stupenda e balcone, a circa 6,5 km da Imbarco Battelli Bellagio. L’alloggio dista 5,7 km da I Giardini di Villa Melzi e offre il WiFi gratuito e 1 posto auto privato scoperto (no garage) a 100 metri.</p>
-                    <p>Questa casa vacanze con aria condizionata comprende 3 camere da letto per un totale di 6 posti letto, un soggiorno, una cucina con utensili, frigorifero e macchina da caffè, 2 TV LCD e 2 bagni con bidet e doccia. Presso questa casa vacanze troverete asciugamani e lenzuola tra i servizi offerti.</p>
-                    <p>Nelle vicinanze potrete praticare il ciclismo. Stazione di Como Lago è a 23 km da questa casa vacanze, mentre Basilica di San Fedele si trova a 24 km dalla struttura. Aeroporto di Bergamo-Orio al Serio si trova a 66 km di distanza.</p>
+                    <h3 data-i18n="modal_desc_title">Descrizione</h3>
+                    <p data-i18n="lezzeno_desc_1">Con vista sulla città, La Terrazza sul lago Lezzeno mette a disposizione un alloggio dotato di splendida terrazza rooftop con vista lago stupenda e balcone, a circa 6,5 km da Imbarco Battelli Bellagio. L’alloggio dista 5,7 km da I Giardini di Villa Melzi e offre il WiFi gratuito e 1 posto auto privato scoperto (no garage) a 100 metri.</p>
+                    <p data-i18n="lezzeno_desc_2">Questa casa vacanze con aria condizionata comprende 3 camere da letto per un totale di 6 posti letto, un soggiorno, una cucina con utensili, frigorifero e macchina da caffè, 2 TV LCD e 2 bagni con bidet e doccia. Presso questa casa vacanze troverete asciugamani e lenzuola tra i servizi offerti.</p>
+                    <p data-i18n="lezzeno_desc_3">Nelle vicinanze potrete praticare il ciclismo. Stazione di Como Lago è a 23 km da questa casa vacanze, mentre Basilica di San Fedele si trova a 24 km dalla struttura. Aeroporto di Bergamo-Orio al Serio si trova a 66 km di distanza.</p>
                     
                     <div class="modal-features">
                         <div class="modal-feature-item">
                             <i class="ph ph-bed"></i>
                             <div class="modal-feature-text">
                                 <span class="value">3</span>
-                                <span class="label">Bedrooms</span>
+                                <span class="label" data-i18n="feat_bedrooms">Bedrooms</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-users"></i>
                             <div class="modal-feature-text">
                                 <span class="value">6</span>
-                                <span class="label">Posti Letto</span>
+                                <span class="label" data-i18n="feat_beds">Posti Letto</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-shower"></i>
                             <div class="modal-feature-text">
                                 <span class="value">2</span>
-                                <span class="label">Bathrooms</span>
+                                <span class="label" data-i18n="feat_bathrooms">Bathrooms</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-car"></i>
                             <div class="modal-feature-text">
                                 <span class="value">1</span>
-                                <span class="label">Posto Auto</span>
+                                <span class="label" data-i18n="feat_parking_single">Posto Auto</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-ruler"></i>
                             <div class="modal-feature-text">
                                 <span class="value">100 Mq</span>
-                                <span class="label">Superficie</span>
+                                <span class="label" data-i18n="feat_surface">Superficie</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
@@ -442,35 +449,35 @@
                             <i class="ph ph-calendar"></i>
                             <div class="modal-feature-text">
                                 <span class="value">2016</span>
-                                <span class="label">Year Built</span>
+                                <span class="label" data-i18n="feat_year">Year Built</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-wifi-high"></i>
                             <div class="modal-feature-text">
-                                <span class="value">Incluso</span>
+                                <span class="value" data-i18n="feat_included">Incluso</span>
                                 <span class="label">WiFi</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-snowflake"></i>
                             <div class="modal-feature-text">
-                                <span class="value">Sì</span>
-                                <span class="label">Aria Cond.</span>
+                                <span class="value" data-i18n="feat_yes">Sì</span>
+                                <span class="label" data-i18n="feat_ac">Aria Cond.</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-cigarette"></i>
                             <div class="modal-feature-text">
-                                <span class="value">Sì</span>
-                                <span class="label">Area Fumatori</span>
+                                <span class="value" data-i18n="feat_yes">Sì</span>
+                                <span class="label" data-i18n="feat_smoking">Area Fumatori</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="modal-location">
-                    <h3>Posizione</h3>
+                    <h3 data-i18n="modal_location_title">Posizione</h3>
                     <div class="address-box">
                         <i class="ph ph-map-pin"></i>
                         <p>Lezzeno (CO)</p>
@@ -513,45 +520,45 @@
 
             <div class="modal-body">
                 <div class="modal-description">
-                    <h3>Descrizione</h3>
-                    <p>Con vista sulla vallata e sui monti, La Terrazza sui Monti propone un alloggio con balcone e macchina da caffè, a circa 15 km da Villa Carlotta. Con aria condizionata, l’alloggio è a 13 km da Monte Generoso e offre WiFi gratis e 2 posti auto all'aperto (no garage) con colonnina per ricarica elettrica.</p>
-                    <p>Questo appartamento presenta 3 camere da letto per un totale di 6 posti letto, 2 bagni, lenzuola, asciugamani, 2 TV LCD, una zona pranzo, una cucina con utensili e un terrazzo di 60 mq con vasca Jacuzzi riscaldata, tavoli, lettini e tende da sole. Presso questo appartamento potrete usufruire di una vasca idromassaggio.</p>
-                    <p>Parco Swissminiatur è a 21 km da La Terrazza sui Monti, mentre Museo Villa Olmo si trova a 24 km dalla struttura.</p>
+                    <h3 data-i18n="modal_desc_title">Descrizione</h3>
+                    <p data-i18n="monti_desc_1">Con vista sulla vallata e sui monti, La Terrazza sui Monti propone un alloggio con balcone e macchina da caffè, a circa 15 km da Villa Carlotta. Con aria condizionata, l’alloggio è a 13 km da Monte Generoso e offre WiFi gratis e 2 posti auto all'aperto (no garage) con colonnina per ricarica elettrica.</p>
+                    <p data-i18n="monti_desc_2">Questo appartamento presenta 3 camere da letto per un totale di 6 posti letto, 2 bagni, lenzuola, asciugamani, 2 TV LCD, una zona pranzo, una cucina con utensili e un terrazzo di 60 mq con vasca Jacuzzi riscaldata, tavoli, lettini e tende da sole. Presso questo appartamento potrete usufruire di una vasca idromassaggio.</p>
+                    <p data-i18n="monti_desc_3">Parco Swissminiatur è a 21 km da La Terrazza sui Monti, mentre Museo Villa Olmo si trova a 24 km dalla struttura.</p>
                     
                     <div class="modal-features">
                         <div class="modal-feature-item">
                             <i class="ph ph-bed"></i>
                             <div class="modal-feature-text">
                                 <span class="value">3</span>
-                                <span class="label">Bedrooms</span>
+                                <span class="label" data-i18n="feat_bedrooms">Bedrooms</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-users"></i>
                             <div class="modal-feature-text">
                                 <span class="value">6</span>
-                                <span class="label">Posti Letto</span>
+                                <span class="label" data-i18n="feat_beds">Posti Letto</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-shower"></i>
                             <div class="modal-feature-text">
                                 <span class="value">2</span>
-                                <span class="label">Bathrooms</span>
+                                <span class="label" data-i18n="feat_bathrooms">Bathrooms</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-car"></i>
                             <div class="modal-feature-text">
                                 <span class="value">2</span>
-                                <span class="label">Posti Auto</span>
+                                <span class="label" data-i18n="feat_parking">Posti Auto</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-ruler"></i>
                             <div class="modal-feature-text">
                                 <span class="value">140 Mq</span>
-                                <span class="label">Superficie</span>
+                                <span class="label" data-i18n="feat_surface">Superficie</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
@@ -565,35 +572,35 @@
                             <i class="ph ph-calendar"></i>
                             <div class="modal-feature-text">
                                 <span class="value">2016</span>
-                                <span class="label">Year Built</span>
+                                <span class="label" data-i18n="feat_year">Year Built</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-wifi-high"></i>
                             <div class="modal-feature-text">
-                                <span class="value">Incluso</span>
+                                <span class="value" data-i18n="feat_included">Incluso</span>
                                 <span class="label">WiFi</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-snowflake"></i>
                             <div class="modal-feature-text">
-                                <span class="value">Sì</span>
-                                <span class="label">Aria Cond.</span>
+                                <span class="value" data-i18n="feat_yes">Sì</span>
+                                <span class="label" data-i18n="feat_ac">Aria Cond.</span>
                             </div>
                         </div>
                         <div class="modal-feature-item">
                             <i class="ph ph-bathtub"></i>
                             <div class="modal-feature-text">
-                                <span class="value">Sì</span>
-                                <span class="label">Idromassaggio</span>
+                                <span class="value" data-i18n="feat_yes">Sì</span>
+                                <span class="label" data-i18n="feat_jacuzzi">Idromassaggio</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="modal-location">
-                    <h3>Posizione</h3>
+                    <h3 data-i18n="modal_location_title">Posizione</h3>
                     <div class="address-box">
                         <i class="ph ph-map-pin"></i>
                         <p>Valle Intelvi (CO)</p>

@@ -15,11 +15,45 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f9f9f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
 body {
     font-family: var(--font-body);
     color: var(--text-color);
     line-height: 1.6;
     background-color: var(--white); /* Sfondo bianco per il body */
+}
+
+/* Keyframes for animations */
+@keyframes slowZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
 
 /* Header */
@@ -28,14 +62,48 @@ header {
     grid-template-columns: 1fr auto 1fr; /* 3 colonne: spazio vuoto - logo - menu */
     align-items: center;
     padding: 15px 50px;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+    background-color: rgba(255, 255, 255, 0.85); /* Più trasparente per glassmorphism */
+    backdrop-filter: blur(12px); /* Blur più forte */
+    box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     transition: all 0.3s ease;
+}
+
+/* Language Switcher */
+.lang-switch-container {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.lang-option {
+    cursor: pointer;
+    color: var(--primary-color);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.lang-option:hover {
+    opacity: 1;
+}
+
+.lang-option.active {
+    opacity: 1;
+    font-weight: 700;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.separator {
+    color: var(--primary-color);
+    opacity: 0.3;
 }
 
 .logo-container {
@@ -92,9 +160,7 @@ nav a:hover {
     height: 100vh;
     width: 100%;
     background-color: var(--white);
-    background-image: url('hero.jpg');
-    background-size: cover;
-    background-position: center;
+    /* Image moved to ::after for animation */
     position: sticky; /* Sticky per effetto parallax */
     top: 0;
     z-index: 0;
@@ -103,6 +169,21 @@ nav a:hover {
     align-items: center;
     text-align: center;
     padding: 0 20px;
+    overflow: hidden; /* Important for zoom overflow */
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    animation: slowZoom 20s infinite alternate ease-in-out;
 }
 
 #hero::before {
@@ -141,11 +222,18 @@ nav a:hover {
     font-weight: 500;
     letter-spacing: 1px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .btn-minimal:hover {
     background-color: var(--white);
     color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.btn-minimal:active {
+    transform: translateY(1px);
 }
 
 .btn-minimal.dark {
@@ -207,10 +295,11 @@ nav a:hover {
 .struttura-card:nth-child(3) { transition-delay: 0.5s; }
 
 .struttura-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s, box-shadow 0.3s; /* Snappy hover in, smooth float out */
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s;
     transition-delay: 0s; /* No delay on hover */
+    z-index: 2; /* Lift above others */
 }
 
 .card-image {
@@ -289,6 +378,40 @@ nav a:hover {
     border-radius: 50%;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     border: 1px solid #f0f0f0;
+}
+
+/* Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* Sezione 1 - Offerte e Promozioni */
@@ -570,6 +693,12 @@ nav a:hover {
     border-radius: 12px; /* Radius più morbido */
     padding: 30px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.03); /* Ombra leggera */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
 }
 
 .contact-card h3 {
@@ -790,11 +919,14 @@ nav a:hover {
 /* Mobile adjustments for floating buttons */
 @media (max-width: 768px) {
     .float-btn {
-        bottom: 20px;
-        width: 40px;
-        height: 40px;
-        font-size: 1.1rem;
+        bottom: 80px; /* Alzati significativamente per evitare barre di navigazione browser (es. Safari iOS) */
+        width: 50px;
+        height: 50px;
+        font-size: 1.4rem;
         z-index: 1500; /* Ensure visibility on mobile */
+        background-color: #ffffff; /* Sfondo pieno per visibilità */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.25); /* Ombra più marcata */
+        border: 1px solid #f0f0f0;
     }
     
     .float-left {
@@ -914,11 +1046,16 @@ footer a:hover {
 
 
     #hero {
-        background-image: url('heromobile.jpg');
-        background-attachment: scroll; /* Meglio su mobile */
+        /* Mobile background logic updated to match new structure */
         position: sticky; /* Re-enable sticky for parallax effect */
         top: 0;
         z-index: 0;
+    }
+
+    #hero::after {
+        background-image: url('heromobile.jpg');
+        background-attachment: scroll; /* Meglio su mobile */
+        animation: none; /* Disable zoom on mobile for performance */
     }
 
     .hero-content h1 {
