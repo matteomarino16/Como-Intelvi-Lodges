@@ -463,28 +463,10 @@ nav a:hover {
     transform: translateY(-50%) translateX(0); /* Reset to original position */
 }
 
+/* Mobile responsive for margin icons - hide or adjust */
 @media (max-width: 768px) {
     .margin-icon {
-        position: static; /* Rimuove il posizionamento assoluto */
-        width: 50px;
-        height: auto;
-        opacity: 0; /* Hidden initially */
-        display: block; /* Le mette in riga da sole */
-        margin: 0 auto; /* Le centra orizzontalmente */
-        transform: translateY(30px); /* Start slightly down */
-    }
-    .margin-icon.left {
-        margin-bottom: 20px; /* Spazio sotto l'icona superiore */
-        transform: translateY(-30px); /* Start slightly up for the top one? Or just down */
-    }
-    .margin-icon.right {
-        margin-top: 20px; /* Spazio sopra l'icona inferiore */
-        transform: translateY(30px); /* Start slightly down */
-    }
-    
-    .margin-icon.visible {
-        opacity: 0.8;
-        transform: translateY(0);
+        display: none; /* Hide margin icons on mobile as they clutter the view and cause layout issues */
     }
 }
 
@@ -662,6 +644,7 @@ nav a:hover {
         flex-direction: column;
         text-align: center;
         gap: 30px;
+        width: 100%; /* Force full width */
     }
 
     .chi-siamo-text p {
@@ -1094,6 +1077,7 @@ footer a:hover {
         flex-direction: column;
         text-align: center;
         gap: 30px;
+        width: 100%; /* Force full width */
     }
 
     .chi-siamo-text p {
@@ -1106,13 +1090,20 @@ footer a:hover {
     }
     
     .contact-card {
-        min-width: 100%;
+        min-width: 0;
+        width: 100%;
         padding: 20px;
     }
 
     /* Ridimensionamento strutture su mobile */
     .struttura-card {
         padding: 15px;
+    }
+    
+    .strutture-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
 
     .card-image {
@@ -1134,5 +1125,10 @@ footer a:hover {
         height: 25px;
         line-height: 25px;
         font-size: 0.8rem;
+    }
+
+    .contact-details-boxes .contact-box {
+        flex-direction: column; /* Stack content on very small screens if needed, or keep row but adjust size */
+        text-align: center;
     }
 }
