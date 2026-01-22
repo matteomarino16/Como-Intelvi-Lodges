@@ -170,7 +170,7 @@ nav a:hover {
     box-shadow: 0 -10px 20px rgba(0,0,0,0.05); /* Ombra per stacco visivo */
 }
 
-#strutture h2, #contatti h2, #chi-siamo h2 {
+#strutture h2, #contatti h2, #chi-siamo h2, #sezione1 h2, #scopri-lago h2 {
     font-family: var(--font-heading);
     font-size: 2.5rem;
     margin-bottom: 50px;
@@ -191,12 +191,26 @@ nav a:hover {
     padding: 20px;
     border: 1px solid #eee; /* Bordo leggero per distinguere le card su sfondo bianco */
     border-radius: 8px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(50px);
 }
+
+.struttura-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered delay for sequential appearance */
+.struttura-card:nth-child(1) { transition-delay: 0.1s; }
+.struttura-card:nth-child(2) { transition-delay: 0.3s; }
+.struttura-card:nth-child(3) { transition-delay: 0.5s; }
 
 .struttura-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s; /* Snappy hover in, smooth float out */
+    transition-delay: 0s; /* No delay on hover */
 }
 
 .card-image {
@@ -275,6 +289,195 @@ nav a:hover {
     border-radius: 50%;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     border: 1px solid #f0f0f0;
+}
+
+/* Sezione 1 - Offerte e Promozioni */
+#sezione1 {
+    padding: 40px 50px;
+    background-color: var(--white); /* Sfondo bianco */
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden; /* Prevent horizontal scroll if images are too big or positioned out */
+}
+
+.margin-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px; /* Size of the favicon */
+    height: auto;
+    opacity: 0; /* Hidden initially for transition */
+    z-index: 0;
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Smooth long transition */
+}
+
+.margin-icon.left {
+    left: 5%;
+    transform: translateY(-50%) translateX(-100px); /* Start off-screen left */
+}
+
+.margin-icon.right {
+    right: 5%;
+    transform: translateY(-50%) translateX(100px); /* Start off-screen right */
+}
+
+/* Visible state */
+.margin-icon.visible {
+    opacity: 0.9;
+    transform: translateY(-50%) translateX(0); /* Reset to original position */
+}
+
+@media (max-width: 768px) {
+    .margin-icon {
+        position: static; /* Rimuove il posizionamento assoluto */
+        width: 50px;
+        height: auto;
+        opacity: 0; /* Hidden initially */
+        display: block; /* Le mette in riga da sole */
+        margin: 0 auto; /* Le centra orizzontalmente */
+        transform: translateY(30px); /* Start slightly down */
+    }
+    .margin-icon.left {
+        margin-bottom: 20px; /* Spazio sotto l'icona superiore */
+        transform: translateY(-30px); /* Start slightly up for the top one? Or just down */
+    }
+    .margin-icon.right {
+        margin-top: 20px; /* Spazio sopra l'icona inferiore */
+        transform: translateY(30px); /* Start slightly down */
+    }
+    
+    .margin-icon.visible {
+        opacity: 0.8;
+        transform: translateY(0);
+    }
+}
+
+/* Scopri Lago Section */
+#scopri-lago {
+    padding: 100px 20px;
+    background-image: url('sfondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+#scopri-lago::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); /* Light overlay to keep it bright? Or dark? Let's try light if they want black button */
+    /* Actually, usually images need dark overlay for white text, or light overlay for black text.
+       If button is black, maybe the text should be black too?
+       The user didn't specify text color.
+       Let's assume they want the image to be visible.
+       If I use a light overlay, black text and black button will pop.
+       If I use a dark overlay, white text and black button (with maybe white border) might work.
+       
+       Let's look at the previous context. They wanted "white background" before. Now "sfondo.jpg".
+       If I use no overlay, text might be unreadable.
+       
+       Let's try a very light overlay or no overlay but ensure text is readable. 
+       Actually, let's go with a standard parallax style but keep the text dark if the image is light, or text white if image is dark.
+       Since I don't know the image brightness, a safe bet is a white overlay with some transparency if we want to keep the black theme, OR a dark overlay with white text.
+       
+       Given the previous "white background" request, maybe they like the "light" feel.
+       But "sfondo.jpg" sounds like a specific scenic photo.
+       Let's try:
+       - Background image
+       - White text (usually looks best on photos)
+       - Black button (as requested)
+       - Dark overlay (to make white text readable)
+       
+       Wait, if the button is black, it might get lost on a dark overlay.
+       Let's add a white border to the black button in this specific section if needed, or just rely on the button's hover effect.
+       
+       Actually, I'll stick to the "btn-black" class I made.
+       Let's try making the text white, as that's standard for "scenic" sections.
+    */
+    background: rgba(255, 255, 255, 0.3); /* Let's try a light overlay so the black button stands out */
+    z-index: 1;
+}
+
+#scopri-lago .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Override h2 color for this section if needed, or let it inherit black */
+#scopri-lago h2 {
+    color: var(--primary-color); /* Keep it black/dark */
+    text-shadow: 0 2px 4px rgba(255,255,255,0.5); /* White shadow for readability */
+    margin-bottom: 30px;
+}
+
+/* h2 style is inherited from common section headers */
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.contact-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Molto più piccoli */
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--white);
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.contact-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.contact-icon.whatsapp:hover {
+    color: #25D366;
+    border-color: #25D366;
+}
+
+.contact-icon.email:hover {
+    color: #EA4335;
+    border-color: #EA4335;
+}
+
+.contact-icon.phone:hover {
+    color: #34B7F1;
+    border-color: #34B7F1;
+}
+
+@media (max-width: 768px) {
+    #sezione1 {
+        padding: 50px 20px;
+    }
+    
+    /* h2 style handled by common rule */
+
+    .contact-icons {
+        gap: 15px;
+    }
+
+    .contact-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
 }
 
 /* Chi Siamo Section */
@@ -505,7 +708,46 @@ nav a:hover {
 }
 
 .btn-full:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-black {
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 1px solid var(--primary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-black:hover {
+    background-color: transparent;
+    color: var(--primary-color);
 }
 
 /* Floating Action Buttons */
@@ -689,7 +931,7 @@ footer a:hover {
         padding: 60px 20px;
     }
 
-    #strutture h2, #contatti h2, #chi-siamo h2 {
+    #strutture h2, #contatti h2, #chi-siamo h2, #sezione1 h2, #scopri-lago h2 {
         font-size: 2rem;
         margin-bottom: 30px;
     }

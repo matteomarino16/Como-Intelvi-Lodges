@@ -179,4 +179,27 @@ document.addEventListener('DOMContentLoaded', function() {
             if (e.key === 'ArrowLeft') showPrevImage();
         }
     });
+
+    // --- Scroll Animations ---
+    const observerOptions = {
+        threshold: 0.2 // Trigger when 20% visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    const marginIcons = document.querySelectorAll('.margin-icon');
+    marginIcons.forEach(icon => {
+        observer.observe(icon);
+    });
+
+    const strutturaCards = document.querySelectorAll('.struttura-card');
+    strutturaCards.forEach(card => {
+        observer.observe(card);
+    });
 });
