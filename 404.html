@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Pagina Non Trovata | Como Intelvi Lodges</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            background-color: var(--white);
+        }
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+        .btn-home {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: opacity 0.3s;
+        }
+        .btn-home:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="lang-switch-container">
+            <span class="lang-option active">IT</span>
+        </div>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="logo.png" alt="Como Intelvi Lodges Logo" class="logo">
+            </a>
+        </div>
+        <div style="width: 100px;"></div> <!-- Spacer for grid balance -->
+    </header>
+
+    <main>
+        <h1>404</h1>
+        <p>Ci dispiace, la pagina che stai cercando non esiste o è stata spostata.</p>
+        <a href="index.html" class="btn-home">Torna alla Home</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Como Intelvi Lodges. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

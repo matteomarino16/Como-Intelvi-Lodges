@@ -935,6 +935,50 @@ nav a:hover {
     }
 }
 
+/* Cookie Banner */
+.cookie-banner {
+    position: fixed;
+    bottom: -100%; /* Hidden initially */
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+    padding: 20px;
+    z-index: 2000;
+    transition: bottom 0.5s ease-out;
+    border-top: 1px solid #eee;
+}
+
+.cookie-banner.show {
+    bottom: 0;
+}
+
+.cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.cookie-content p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.cookie-content a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 /* Footer */
 footer {
     background-color: var(--white); /* Sfondo bianco come richiesto */

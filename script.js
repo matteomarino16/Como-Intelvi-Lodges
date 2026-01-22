@@ -1,5 +1,47 @@
 document.addEventListener('DOMContentLoaded', function() {
     
+    // --- Cookie Banner Logic ---
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookiesBtn = document.getElementById('accept-cookies');
+    
+    // Check if user has already accepted
+    if (!localStorage.getItem('cookiesAccepted')) {
+        // Show banner after a short delay
+        setTimeout(() => {
+            cookieBanner.classList.add('show');
+        }, 1000);
+    }
+
+    acceptCookiesBtn.addEventListener('click', () => {
+        localStorage.setItem('cookiesAccepted', 'true');
+        cookieBanner.classList.remove('show');
+    });
+
+    // --- Contact Form Logic (Mailto fallback) ---
+    const contactForm = document.querySelector('.form-card form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const cognome = document.getElementById('cognome').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+            const appartamento = document.getElementById('appartamento').value;
+            const messaggio = document.getElementById('messaggio').value;
+            
+            const subject = `Richiesta Info da Sito Web: ${nome} ${cognome}`;
+            const body = `Nome: ${nome} ${cognome}%0D%0A` +
+                         `Email: ${email}%0D%0A` +
+                         `Telefono: ${telefono}%0D%0A` +
+                         `Interesse per: ${appartamento}%0D%0A%0D%0A` +
+                         `Messaggio:%0D%0A${messaggio}`;
+            
+            // Open default mail client
+            window.location.href = `mailto:info@hotelauroralezzeno.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+        });
+    }
+
     // --- Translations ---
     const translations = {
         it: {
@@ -69,18 +111,20 @@ document.addEventListener('DOMContentLoaded', function() {
             section_about: "About Us",
             about_text: "Como Intelvi Lodges offers three signature residences on Lake Como, designed for those seeking a stay of comfort, tranquility, and authenticity. Each apartment combines contemporary design with the typical atmosphere of the valley, featuring bright spaces and carefully curated details. Located in strategic positions between the lake, mountains, and historic villages.",
             section_contact: "Contact Us",
-            contact_title: "Contacts",
-            form_title: "Information Request",
+            contact_title: "Contact Us",
+            form_title: "Request Information",
             form_name: "Name",
             form_surname: "Surname",
             form_phone: "Phone",
             form_select_apartment: "Select Apartment",
-            form_select_default: "-- Choose the lodge --",
+            form_select_default: "-- Choose Structure --",
             form_message: "Message",
             form_submit: "Send Request",
             form_name_placeholder: "Name",
             form_surname_placeholder: "Surname",
             form_message_placeholder: "Write your request here...",
+            cookie_text: "We use cookies to improve your experience. By continuing to browse, you accept our <a href='privacy.html'>Privacy Policy</a>.",
+            cookie_accept: "Accept",
             section_discover: "Come and discover Lake Como",
             discover_btn: "Discover places",
             footer_copyright: "&copy; 2026 Copyright Comointelvilodges.it - All rights reserved.",
