@@ -196,6 +196,7 @@ nav a:hover {
     background-position: center;
     z-index: 0;
     animation: slowZoom 20s infinite alternate ease-in-out;
+    filter: contrast(1.1); /* Leggero contrasto per migliorare la percezione della nitidezza */
 }
 
 #hero::before {
@@ -914,7 +915,7 @@ nav a:hover {
 /* Mobile adjustments for floating buttons */
 @media (max-width: 768px) {
     .float-btn {
-        bottom: 80px; /* Alzati significativamente per evitare barre di navigazione browser (es. Safari iOS) */
+        bottom: 25px; /* Spostati più in basso come richiesto */
         width: 50px;
         height: 50px;
         font-size: 1.4rem;
