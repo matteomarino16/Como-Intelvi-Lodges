@@ -173,8 +173,9 @@ nav a:hover {
     width: 100%;
     background-color: var(--white);
     /* Image moved to ::after for animation */
-    position: sticky; /* Sticky per effetto parallax */
+    position: fixed; /* Fixed per effetto parallax completo */
     top: 0;
+    left: 0;
     z-index: 0;
     display: flex;
     justify-content: center;
@@ -263,6 +264,7 @@ nav a:hover {
 
 /* Strutture Section */
 #strutture {
+    margin-top: 100vh; /* Push content below fixed hero */
     padding: 80px 50px;
     background-color: var(--white); /* Sfondo bianco */
     text-align: center;
