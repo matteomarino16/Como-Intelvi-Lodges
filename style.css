@@ -1113,7 +1113,7 @@ footer a:hover {
 
     #hero {
         /* Mobile background logic updated to match new structure */
-        position: sticky; /* Re-enable sticky for parallax effect */
+        position: fixed; /* Fixed anche su mobile per coerenza */
         top: 0;
         z-index: 0;
     }
