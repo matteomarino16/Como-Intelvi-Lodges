@@ -582,6 +582,16 @@ nav a:hover {
     border-color: #34B7F1;
 }
 
+.contact-icon.instagram:hover {
+    color: #C13584;
+    border-color: #C13584;
+}
+
+.contact-icon.facebook:hover {
+    color: #1877F2;
+    border-color: #1877F2;
+}
+
 @media (max-width: 768px) {
     #sezione1 {
         padding: 50px 20px;
